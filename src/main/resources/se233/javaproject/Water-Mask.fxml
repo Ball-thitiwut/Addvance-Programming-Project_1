@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="350.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="se233.javaproject.view.WaterMask">
+   <children>
+      <Slider fx:id="Visibility" layoutX="22.0" layoutY="70.0" prefHeight="27.0" prefWidth="408.0" showTickLabels="true" showTickMarks="true" />
+      <Label alignment="CENTER" layoutX="159.0" layoutY="27.0" prefHeight="35.0" prefWidth="119.0" style="-fx-border-color: black;" text="Visibility" textAlignment="CENTER">
+         <font>
+            <Font name="Angsana New" size="24.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="159.0" layoutY="115.0" prefHeight="35.0" prefWidth="119.0" style="-fx-border-color: black;" text="Image-quality" textAlignment="CENTER">
+         <font>
+            <Font name="Angsana New" size="24.0" />
+         </font>
+      </Label>
+      <Slider fx:id="ImageQuality" layoutX="22.0" layoutY="162.0" max="100" min="0" prefHeight="27.0" prefWidth="408.0" showTickLabels="true" showTickMarks="true" />
+      <ChoiceBox fx:id="changeFormat" layoutX="55.0" layoutY="240.0" prefHeight="35.0" prefWidth="171.0" />
+      <Label alignment="CENTER" layoutX="81.0" layoutY="199.0" prefHeight="35.0" prefWidth="119.0" style="-fx-border-color: black;" text="Image-format" textAlignment="CENTER">
+         <font>
+            <Font name="Angsana New" size="24.0" />
+         </font>
+      </Label>
+      <ColorPicker fx:id="changeBackgroundColor" layoutX="257.0" layoutY="240.0" onAction="#changeImageBackgroundColor" prefHeight="35.0" prefWidth="158.0" />
+      <Label alignment="CENTER" layoutX="272.0" layoutY="199.0" prefHeight="35.0" prefWidth="127.0" style="-fx-border-color: black;" text="Background-color" textAlignment="CENTER">
+         <font>
+            <Font name="Angsana New" size="24.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="500.0" layoutY="27.0" prefHeight="35.0" prefWidth="119.0" style="-fx-border-color: black;" text="Water-Mask" textAlignment="CENTER">
+         <font>
+            <Font name="Angsana New" size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="Confirm" layoutX="81.0" layoutY="287.0" mnemonicParsing="false" onAction="#confirmButtonClicked" prefHeight="49.0" prefWidth="144.0" style="-fx-background-color: green;" text="Confirm"> textFill="WHITE">
+         <font>
+            <Font name="Angsana New" size="24.0" />
+         </font>
+      </Button>
+      <!--Button switch back to MainView scene-->
+      <Button layoutY="-3.0" mnemonicParsing="false" onAction="#switchSceneToBackMainView" prefHeight="35.0" prefWidth="89.0" text="&lt;-Back" />
+      <TextArea fx:id="textArea" layoutX="453.0" layoutY="73.0" prefHeight="49.0" prefWidth="213.0" />
+      <Button fx:id="removeWaterMask" layoutX="607.0" layoutY="120.0" mnemonicParsing="false" onAction="#removeWaterMark" text="Remove" />
+      <StackPane layoutX="444.0" layoutY="154.0">
+         <Text fx:id="waterMaskText" fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="201.0" />
+         <ImageView fx:id="imageView" fitHeight="173.0" fitWidth="231.0" pickOnBounds="true" preserveRatio="true" />
+      </StackPane>
+      <MenuButton fx:id="Format" layoutX="257.0" layoutY="293.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="111.0" text="Format">
+         <items>
+            <MenuItem mnemonicParsing="false" onAction="#MenuButtonUpdate" text="PNG" />
+            <MenuItem mnemonicParsing="false" onAction="#MenuButtonUpdate" text="JPEG" />
+         </items>
+      </MenuButton>
+      </children>
+</AnchorPane>

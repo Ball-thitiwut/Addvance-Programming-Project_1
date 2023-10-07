@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="350.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="se233.javaproject.view.ReSize">
+   <children>
+      <Slider fx:id="HeightSlider" layoutX="43.0" layoutY="86.0" max="500.0" prefHeight="31.0" prefWidth="326.0" showTickLabels="true" showTickMarks="true" value="250.0" visible="false" />
+      <Slider fx:id="WidthSlider" layoutX="43.0" layoutY="183.0" max="1000.0" prefHeight="31.0" prefWidth="326.0" showTickLabels="true" showTickMarks="true" value="500.0" visible="false" />
+      <Slider fx:id="PercentageSlider" layoutX="43.0" layoutY="284.0" max="500.0" prefHeight="31.0" prefWidth="326.0" showTickLabels="true" showTickMarks="true" value="100.0" visible="false" />
+      <Label alignment="CENTER" layoutX="423.0" layoutY="88.0" prefHeight="35.0" prefWidth="119.0" style="-fx-border-color: black;" text="Image-format" textAlignment="CENTER">
+         <font>
+            <Font name="Angsana New" size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="Confirm" layoutX="423.0" layoutY="221.0" mnemonicParsing="false" onAction="#confirmButtonClicked" prefHeight="49.0" prefWidth="119.0" style="-fx-background-color: green;" text="Confirm" textFill="WHITE">
+         <font>
+            <Font name="Angsana New" size="24.0" />
+         </font>
+      </Button>
+      <!--Button switch back to MainView scene-->
+      <Button mnemonicParsing="false" onAction="#switchSceneToBackMainView" prefHeight="35.0" prefWidth="89.0" text="&lt;-Back" />
+      <Button fx:id="Height" layoutX="150.0" layoutY="33.0" mnemonicParsing="false" onAction="#handleHeightButton" prefHeight="35.0" prefWidth="111.0" text="Height">
+         <font>
+            <Font name="Angsana New" size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="Width" layoutX="150.0" layoutY="124.0" mnemonicParsing="false" onAction="#handleWidthButton" prefHeight="49.0" prefWidth="111.0" text="Width">
+         <font>
+            <Font name="Angsana New" size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="Percentage" layoutX="150.0" layoutY="221.0" mnemonicParsing="false" onAction="#handlePercentageButton" prefHeight="49.0" prefWidth="111.0" text="Percentage">
+         <font>
+            <Font name="Angsana New" size="24.0" />
+         </font>
+      </Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#7cb0e1" height="350.0" layoutX="611.0" stroke="WHITE" strokeType="INSIDE" width="111.0" />
+      <MenuButton fx:id="Format" layoutX="427.0" layoutY="130.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="111.0" text="Format">
+        <items>
+          <MenuItem mnemonicParsing="false" onAction="#MenuButtonUpdate" text="PNG" />
+          <MenuItem mnemonicParsing="false" onAction="#MenuButtonUpdate" text="JPEG" />
+        </items>
+      </MenuButton>
+   </children>
+</AnchorPane>
